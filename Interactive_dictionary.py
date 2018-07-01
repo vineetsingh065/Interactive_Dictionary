@@ -34,4 +34,18 @@ def translate(word):
 
 word_definations = input("Enter word: ")
 
-print(translate(word_definations))
+output = translate(word_definations)
+if type(output) == list:
+    counter = 1
+    for word_meaning in output:
+        print("%s. %s"%(str(counter),word_meaning))
+        counter +=1
+else:
+    print(output)
+        
+
+
+
+
+
+
