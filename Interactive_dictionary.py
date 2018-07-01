@@ -20,6 +20,10 @@ def translate(word):
     word = word.lower()
     if word in data:
         return data[word]
+    elif word.title() in data:
+        return data[word.title()]
+    elif word.upper() in data: #conditional for Acronyms
+        return data[word.upper()]
     elif len(difflib.get_close_matches(word, data.keys())) > 0:
         suggestion = input("Did you mean %s instead! Enter Y for yes, N for no:  " % difflib.get_close_matches(word, data.keys())[0])
         if suggestion.lower().upper() == "Y":
